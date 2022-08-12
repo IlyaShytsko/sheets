@@ -16,8 +16,8 @@
 		099A8AD02897AFE900D81087 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099A8ACE2897AFE900D81087 /* LaunchScreen.storyboard */; };
 		099A8AD92897B01800D81087 /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 099A8AD82897B01800D81087 /* FloatingPanel */; };
 		099A8ADB2897B04E00D81087 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8ADA2897B04E00D81087 /* SheetViewController.swift */; };
-		099A8ADD2897BAFA00D81087 /* Sheet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099A8ADC2897BAFA00D81087 /* Sheet.storyboard */; };
-		099A8ADF2897BB6A00D81087 /* StaticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8ADE2897BB6A00D81087 /* StaticViewController.swift */; };
+		09D3ED6A28A50B9900271DC4 /* SampleUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D3ED6928A50B9900271DC4 /* SampleUIView.swift */; };
+		09D3ED6C28A50BAE00271DC4 /* SampleUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D3ED6B28A50BAE00271DC4 /* SampleUIView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +31,8 @@
 		099A8ACF2897AFE900D81087 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		099A8AD12897AFE900D81087 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		099A8ADA2897B04E00D81087 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
-		099A8ADC2897BAFA00D81087 /* Sheet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sheet.storyboard; sourceTree = "<group>"; };
-		099A8ADE2897BB6A00D81087 /* StaticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticViewController.swift; sourceTree = "<group>"; };
+		09D3ED6928A50B9900271DC4 /* SampleUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleUIView.swift; sourceTree = "<group>"; };
+		09D3ED6B28A50BAE00271DC4 /* SampleUIView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleUIView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +70,9 @@
 				099A8AC52897AFE600D81087 /* SceneDelegate.swift */,
 				099A8AC72897AFE600D81087 /* ViewController.swift */,
 				099A8ADA2897B04E00D81087 /* SheetViewController.swift */,
-				099A8ADE2897BB6A00D81087 /* StaticViewController.swift */,
+				09D3ED6928A50B9900271DC4 /* SampleUIView.swift */,
+				09D3ED6B28A50BAE00271DC4 /* SampleUIView.xib */,
 				095C7F8F28981C4A00E24AB1 /* Protocols.swift */,
-				099A8ADC2897BAFA00D81087 /* Sheet.storyboard */,
 				099A8AC92897AFE700D81087 /* Main.storyboard */,
 				099A8ACC2897AFE900D81087 /* Assets.xcassets */,
 				099A8ACE2897AFE900D81087 /* LaunchScreen.storyboard */,
@@ -145,10 +145,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				099A8ADD2897BAFA00D81087 /* Sheet.storyboard in Resources */,
 				099A8AD02897AFE900D81087 /* LaunchScreen.storyboard in Resources */,
 				099A8ACD2897AFE900D81087 /* Assets.xcassets in Resources */,
 				099A8ACB2897AFE700D81087 /* Main.storyboard in Resources */,
+				09D3ED6C28A50BAE00271DC4 /* SampleUIView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,9 +160,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				099A8ADB2897B04E00D81087 /* SheetViewController.swift in Sources */,
+				09D3ED6A28A50B9900271DC4 /* SampleUIView.swift in Sources */,
 				099A8AC82897AFE600D81087 /* ViewController.swift in Sources */,
 				099A8AC42897AFE600D81087 /* AppDelegate.swift in Sources */,
-				099A8ADF2897BB6A00D81087 /* StaticViewController.swift in Sources */,
 				095C7F9028981C4A00E24AB1 /* Protocols.swift in Sources */,
 				099A8AC62897AFE600D81087 /* SceneDelegate.swift in Sources */,
 			);

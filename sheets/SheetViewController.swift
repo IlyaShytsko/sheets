@@ -8,31 +8,34 @@
 import FloatingPanel
 import UIKit
 
-final class SheetViewController: FloatingPanelController, ContentHeightProtocol {
-    static func instance(childViewController: UIViewController) -> SheetViewController {
+final class SheetViewController: FloatingPanelController {
+    static func instance(subView: UIView) -> SheetViewController {
         let vc = SheetViewController()
-        vc.childViewController = childViewController
+        vc.subView = subView.loadNib()
         return vc
     }
 
-    private var childViewController: UIViewController!
-
-    private var contentHeight: Double = 0.0 {
-        didSet {
-            print("contentHeight =", contentHeight)
-        }
-    }
+    private var subView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        surfaceView.containerView.addSubview(subView)
+        subView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            subView.leadingAnchor.constraint(equalTo: surfaceView.containerView.leadingAnchor),
+            subView.trailingAnchor.constraint(equalTo: surfaceView.containerView.trailingAnchor),
+            subView.topAnchor.constraint(equalTo: surfaceView.containerView.topAnchor),
+            subView.bottomAnchor.constraint(equalTo: surfaceView.containerView.bottomAnchor),
+        ])
+        
         layoutView()
-        set(contentViewController: childViewController)
         invalidateLayout()
     }
 
     private func layoutView() {
         layout = MyFloatingPanelLayout()
-        contentMode = .static
+        contentMode = .fitToBounds
         backdropView.dismissalTapGestureRecognizer.isEnabled = true
         isRemovalInteractionEnabled = true
         panGestureRecognizer.isEnabled = true
@@ -47,19 +50,25 @@ final class SheetViewController: FloatingPanelController, ContentHeightProtocol 
         surfaceView.appearance.shadows = [shadow]
         surfaceView.grabberHandle.isHidden = true
     }
-
-    func layout(height: Double) {
-        contentHeight = height
-    }
 }
 
-class MyFloatingPanelLayout: FloatingPanelLayout {
+class MyFloatingPanelLayout: FloatingPanelLayout, setHeightProtocol {
+    func setContentHeight(height: Double) {
+        contentHeight = height
+    }
+
+    var contentHeight = 130.0 {
+        didSet {
+            print("contentHeight", contentHeight)
+        }
+    }
+
     var position: FloatingPanelPosition = .bottom
     var initialState: FloatingPanelState = .half
     var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] {
         return [
 //            .full: FloatingPanelLayoutAnchor(absoluteInset: 0.0, edge: .top, referenceGuide: .superview),
-            .half: FloatingPanelLayoutAnchor(absoluteInset: 250, edge: .bottom, referenceGuide: .safeArea),
+            .half: FloatingPanelLayoutAnchor(absoluteInset: contentHeight, edge: .bottom, referenceGuide: .safeArea),
         ]
     }
 

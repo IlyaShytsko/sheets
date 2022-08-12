@@ -9,13 +9,19 @@ import FloatingPanel
 import UIKit
 
 final class ViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .yellow
-    }
 
     @IBAction func showSheetButton(_ sender: Any) {
-        let vc = SheetViewController.instance(childViewController: StaticViewController.instance())
+        let vc = SheetViewController.instance(subView: SampleUIView())
         present(vc, animated: true)
+    }
+}
+
+extension UIView {
+    func loadNib() -> UIView {
+        let bundle = Bundle(for: type(of: self))
+        let nibName = String(describing: type(of: self))
+        let nib = UINib(nibName: nibName, bundle: bundle)
+        let view = nib.instantiate(withOwner: nil).first as! UIView
+        return view
     }
 }
