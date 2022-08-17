@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		095C7F9028981C4A00E24AB1 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095C7F8F28981C4A00E24AB1 /* Protocols.swift */; };
 		099A8AC42897AFE600D81087 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8AC32897AFE600D81087 /* AppDelegate.swift */; };
 		099A8AC62897AFE600D81087 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8AC52897AFE600D81087 /* SceneDelegate.swift */; };
 		099A8AC82897AFE600D81087 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A8AC72897AFE600D81087 /* ViewController.swift */; };
@@ -21,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		095C7F8F28981C4A00E24AB1 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		099A8AC02897AFE600D81087 /* sheets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sheets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		099A8AC32897AFE600D81087 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		099A8AC52897AFE600D81087 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 				099A8ADA2897B04E00D81087 /* SheetViewController.swift */,
 				09D3ED6928A50B9900271DC4 /* SampleUIView.swift */,
 				09D3ED6B28A50BAE00271DC4 /* SampleUIView.xib */,
-				095C7F8F28981C4A00E24AB1 /* Protocols.swift */,
 				099A8AC92897AFE700D81087 /* Main.storyboard */,
 				099A8ACC2897AFE900D81087 /* Assets.xcassets */,
 				099A8ACE2897AFE900D81087 /* LaunchScreen.storyboard */,
@@ -163,7 +160,6 @@
 				09D3ED6A28A50B9900271DC4 /* SampleUIView.swift in Sources */,
 				099A8AC82897AFE600D81087 /* ViewController.swift in Sources */,
 				099A8AC42897AFE600D81087 /* AppDelegate.swift in Sources */,
-				095C7F9028981C4A00E24AB1 /* Protocols.swift in Sources */,
 				099A8AC62897AFE600D81087 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

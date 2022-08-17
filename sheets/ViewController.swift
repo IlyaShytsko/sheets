@@ -11,7 +11,7 @@ import UIKit
 final class ViewController: UIViewController {
 
     @IBAction func showSheetButton(_ sender: Any) {
-        let vc = SheetViewController.instance(subView: SampleUIView())
+        let vc = SheetViewController.instance(subView: SampleUIView(), allowFullScreen: false)
         present(vc, animated: true)
     }
 }
