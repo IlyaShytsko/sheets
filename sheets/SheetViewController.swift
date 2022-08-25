@@ -8,7 +8,7 @@
 import FloatingPanel
 import UIKit
 
-final class SheetViewController: FloatingPanelController, FloatingPanelLayout, FloatingPanelBehavior {
+final class SheetViewController: FloatingPanelController, FloatingPanelLayout, FloatingPanelBehavior, SubViewHeight {
     static func instance(subView: UIView, allowFullScreen: Bool = false) -> SheetViewController {
         let vc = SheetViewController()
         vc.subView = subView.loadNib()
@@ -19,7 +19,12 @@ final class SheetViewController: FloatingPanelController, FloatingPanelLayout, F
     // MARK: - Properties
 
     private var subView: UIView!
-    private var contentHeight: Double = 0
+    var contentHeight: Double = 0 {
+        didSet {
+            print("subview height is", contentHeight)
+        }
+    }
+
     private var allowFullScreen: Bool = false
 
     let position: FloatingPanelPosition = .bottom
@@ -38,9 +43,6 @@ final class SheetViewController: FloatingPanelController, FloatingPanelLayout, F
     // MARK: - Initialization
 
     private func setupView() {
-        let targetSize = CGSize(width: view.frame.size.width, height: UIView.layoutFittingExpandedSize.height)
-        contentHeight = subView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
-
         surfaceView.containerView.addSubview(subView)
         subView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -57,6 +59,7 @@ final class SheetViewController: FloatingPanelController, FloatingPanelLayout, F
         backdropView.dismissalTapGestureRecognizer.isEnabled = true
         isRemovalInteractionEnabled = true
         panGestureRecognizer.isEnabled = true
+//        track(scrollView: subView.tableView)
 
         let shadow = SurfaceAppearance.Shadow()
         shadow.color = UIColor.black.withAlphaComponent(0.15)
@@ -74,6 +77,10 @@ final class SheetViewController: FloatingPanelController, FloatingPanelLayout, F
         case .full, .half: return 0.1
         default: return 0.0
         }
+    }
+
+    func setViewHeight(height: Double) {
+        contentHeight = height
     }
 
     // MARK: - Private
