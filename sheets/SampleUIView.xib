@@ -11,14 +11,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="SampleUIView" customClass="SampleUIView" customModule="sheets" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="628" height="230"/>
+            <rect key="frame" x="0.0" y="0.0" width="648" height="254"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBS-Qo-cWZ" userLabel="Container View">
-                    <rect key="frame" x="0.0" y="64" width="628" height="132"/>
+                    <rect key="frame" x="0.0" y="64" width="648" height="170"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RuR-On-zAK">
-                            <rect key="frame" x="293" y="50" width="42" height="20"/>
+                            <rect key="frame" x="303" y="50" width="42" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="8OS-EX-3S7"/>
                             </constraints>
@@ -27,15 +27,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mej-aK-w6I">
-                            <rect key="frame" x="276.5" y="90" width="75" height="40"/>
+                            <rect key="frame" x="286.5" y="90" width="75" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="c9F-Bs-9hc"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="tinted" title="Button"/>
-                            <connections>
-                                <action selector="buttonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="NYi-1i-PlC"/>
-                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -43,7 +40,7 @@
                         <constraint firstItem="mej-aK-w6I" firstAttribute="top" secondItem="RuR-On-zAK" secondAttribute="bottom" constant="20" id="9m9-8U-hjC"/>
                         <constraint firstItem="RuR-On-zAK" firstAttribute="top" secondItem="WBS-Qo-cWZ" secondAttribute="top" constant="50" id="Sv7-QJ-VJm"/>
                         <constraint firstItem="RuR-On-zAK" firstAttribute="centerX" secondItem="WBS-Qo-cWZ" secondAttribute="centerX" id="mai-Qk-IgV"/>
-                        <constraint firstAttribute="bottom" secondItem="mej-aK-w6I" secondAttribute="bottom" priority="999" constant="40" id="r0T-77-gcX"/>
+                        <constraint firstAttribute="bottom" secondItem="mej-aK-w6I" secondAttribute="bottom" constant="40" id="r0T-77-gcX"/>
                     </constraints>
                 </view>
             </subviews>
@@ -52,14 +49,11 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WBS-Qo-cWZ" secondAttribute="trailing" id="2kd-hR-NLc"/>
                 <constraint firstItem="WBS-Qo-cWZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="C2m-G0-i5W"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WBS-Qo-cWZ" secondAttribute="bottom" id="HJo-97-BpH"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="WBS-Qo-cWZ" secondAttribute="bottom" priority="999" id="HJo-97-BpH"/>
                 <constraint firstItem="WBS-Qo-cWZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="nds-0C-oTe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <connections>
-                <outlet property="conteinerView" destination="WBS-Qo-cWZ" id="edC-tM-BNq"/>
-            </connections>
-            <point key="canvasLocation" x="320.28985507246381" y="-22.767857142857142"/>
+            <point key="canvasLocation" x="305.79710144927537" y="-14.732142857142856"/>
         </view>
     </objects>
 </document>

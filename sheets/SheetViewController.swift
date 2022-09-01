@@ -8,22 +8,18 @@
 import FloatingPanel
 import UIKit
 
-final class SheetViewController: FloatingPanelController, FloatingPanelLayout, FloatingPanelBehavior, SubViewHeight {
-    static func instance(subView: UIView, allowFullScreen: Bool = false) -> SheetViewController {
+final class SheetViewController: FloatingPanelController, FloatingPanelLayout, FloatingPanelBehavior {
+    static func instance(contentView: SampleUIViewDelegate, allowFullScreen: Bool = false) -> SheetViewController {
         let vc = SheetViewController()
-        vc.subView = subView.loadNib()
+        vc.subView = contentView
         vc.allowFullScreen = allowFullScreen
         return vc
     }
 
     // MARK: - Properties
 
-    private var subView: UIView!
-    var contentHeight: Double = 0 {
-        didSet {
-            print("subview height is", contentHeight)
-        }
-    }
+    private var subView: SampleUIViewDelegate!
+    private var subViewHeight: Double { subView.contentHeight }
 
     private var allowFullScreen: Bool = false
 
@@ -43,6 +39,7 @@ final class SheetViewController: FloatingPanelController, FloatingPanelLayout, F
     // MARK: - Initialization
 
     private func setupView() {
+        let subView = subView.contentView.loadNib()
         surfaceView.containerView.addSubview(subView)
         subView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -79,15 +76,13 @@ final class SheetViewController: FloatingPanelController, FloatingPanelLayout, F
         }
     }
 
-    func setViewHeight(height: Double) {
-        contentHeight = height
-    }
 
+    
     // MARK: - Private
 
     private func setAncors() -> [FloatingPanelState: FloatingPanelLayoutAnchoring] {
         return allowFullScreen ? [.full: FloatingPanelLayoutAnchor(absoluteInset: 0.0, edge: .top, referenceGuide: .superview),
-                                  .half: FloatingPanelLayoutAnchor(absoluteInset: contentHeight, edge: .bottom, referenceGuide: .safeArea)] :
-            [.half: FloatingPanelLayoutAnchor(absoluteInset: contentHeight, edge: .bottom, referenceGuide: .safeArea)]
+                                  .half: FloatingPanelLayoutAnchor(absoluteInset: subViewHeight, edge: .bottom, referenceGuide: .safeArea)] :
+            [.half: FloatingPanelLayoutAnchor(absoluteInset: subViewHeight, edge: .bottom, referenceGuide: .safeArea)]
     }
 }

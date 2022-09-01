@@ -5,20 +5,16 @@
 //  Created by Ilya Shytsko on 11.08.2022.
 //
 
-import FloatingPanel
 import UIKit
 
-final class SampleUIView: UIView {
-    @IBOutlet weak var conteinerView: UIView!
-
-    private var sheetView: SubViewHeight?
-
-    override public func awakeFromNib() {
-        super.awakeFromNib()
-        sheetView = SheetViewController()
-        sheetView?.setViewHeight(height: conteinerView.frame.height + 16.0)
-    }
-
-    @IBAction func buttonAction(_ sender: Any) {
+final class SampleUIView: UIView, SampleUIViewDelegate {
+    
+    var contentHeight: Double { 180.0 }
+    var contentView: UIView { return self }
+    
+///возвращает 0...
+    private func sizeThatFits() -> Double {
+        let targetSize = CGSize(width: frame.size.width, height: UIView.layoutFittingExpandedSize.height)
+        return systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .fittingSizeLevel).height
     }
 }
