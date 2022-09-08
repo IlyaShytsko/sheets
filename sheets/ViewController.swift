@@ -18,13 +18,3 @@ final class ViewController: UIViewController, SampleUIViewDelegate {
         print(text)
     }
 }
-
-extension UIView {
-    func loadNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
-        let nibName = String(describing: type(of: self))
-        let nib = UINib(nibName: nibName, bundle: bundle)
-        let view = nib.instantiate(withOwner: nil).first as! UIView
-        return view
-    }
-}
