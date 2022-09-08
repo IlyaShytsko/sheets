@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		090544BD28C8D6E5006F4225 /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090544BB28C8D6E5006F4225 /* SampleViewController.swift */; };
 		090544BE28C8D6E5006F4225 /* SampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 090544BC28C8D6E5006F4225 /* SampleViewController.xib */; };
-		095DE63128C8F1BB00FC7A20 /* BaseSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095DE63028C8F1BB00FC7A20 /* BaseSheetViewController.swift */; };
+		095DE63128C8F1BB00FC7A20 /* BaseContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095DE63028C8F1BB00FC7A20 /* BaseContentViewController.swift */; };
 		0967AD1028B6446E00BA6D01 /* SheetContentViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AD0F28B6446E00BA6D01 /* SheetContentViewProtocol.swift */; };
 		0999F29528C9BAC300EED3D4 /* SampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0999F29428C9BAC300EED3D4 /* SampleTableViewController.swift */; };
 		0999F29828C9BB1200EED3D4 /* SampleTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0999F29728C9BB1100EED3D4 /* SampleTableViewController.xib */; };
@@ -29,7 +29,7 @@
 /* Begin PBXFileReference section */
 		090544BB28C8D6E5006F4225 /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		090544BC28C8D6E5006F4225 /* SampleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SampleViewController.xib; sourceTree = "<group>"; };
-		095DE63028C8F1BB00FC7A20 /* BaseSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSheetViewController.swift; sourceTree = "<group>"; };
+		095DE63028C8F1BB00FC7A20 /* BaseContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseContentViewController.swift; sourceTree = "<group>"; };
 		0967AD0F28B6446E00BA6D01 /* SheetContentViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetContentViewProtocol.swift; sourceTree = "<group>"; };
 		0999F29428C9BAC300EED3D4 /* SampleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewController.swift; sourceTree = "<group>"; };
 		0999F29728C9BB1100EED3D4 /* SampleTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SampleTableViewController.xib; path = sheets/SampleTableViewController/SampleTableViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -104,7 +104,7 @@
 				0999F29928C9CA6000EED3D4 /* ViewController.swift */,
 				099A8ADA2897B04E00D81087 /* SheetViewController.swift */,
 				0967AD0F28B6446E00BA6D01 /* SheetContentViewProtocol.swift */,
-				095DE63028C8F1BB00FC7A20 /* BaseSheetViewController.swift */,
+				095DE63028C8F1BB00FC7A20 /* BaseContentViewController.swift */,
 				090544BA28C8D6C2006F4225 /* SampleViewController */,
 				0999F29628C9BAC900EED3D4 /* SampleTableViewController */,
 				099A8AC92897AFE700D81087 /* Main.storyboard */,
@@ -200,7 +200,7 @@
 				0999F29528C9BAC300EED3D4 /* SampleTableViewController.swift in Sources */,
 				099A8ADB2897B04E00D81087 /* SheetViewController.swift in Sources */,
 				09D7095628C1FE3D00162CE8 /* SampleTableViewCell.swift in Sources */,
-				095DE63128C8F1BB00FC7A20 /* BaseSheetViewController.swift in Sources */,
+				095DE63128C8F1BB00FC7A20 /* BaseContentViewController.swift in Sources */,
 				099A8AC42897AFE600D81087 /* AppDelegate.swift in Sources */,
 				099A8AC62897AFE600D81087 /* SceneDelegate.swift in Sources */,
 				09B8EA2928C6144100797E8E /* SampleUIViewDelegate.swift in Sources */,

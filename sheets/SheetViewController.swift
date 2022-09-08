@@ -18,7 +18,7 @@ final class SheetViewController: FloatingPanelController, FloatingPanelLayout, F
     // MARK: - Properties
 
     private var content: SheetContentViewProtocol!
-    private var contentView: BaseSheetViewController { content.contentViewController }
+    private var contentView: BaseContentViewController { content.contentViewController }
 
     let position: FloatingPanelPosition = .bottom
     let initialState: FloatingPanelState = .half

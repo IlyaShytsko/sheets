@@ -10,5 +10,5 @@ import UIKit
 protocol SheetContentViewProtocol: AnyObject {
     var contentHeight: Double { get }
     var allowFullScreen: Bool { get }
-    var contentViewController: BaseSheetViewController { get }
+    var contentViewController: BaseContentViewController { get }
 }

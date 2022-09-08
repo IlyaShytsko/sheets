@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SampleViewController: BaseSheetViewController {
+final class SampleViewController: BaseContentViewController {
     private var delegate: SampleUIViewDelegate?
 
     @IBOutlet private weak var conteinerView: UIView!
@@ -21,5 +21,5 @@ final class SampleViewController: BaseSheetViewController {
 extension SampleViewController: SheetContentViewProtocol {
     var contentHeight: Double { sizeThatFits(content: conteinerView) + 16 }
     var allowFullScreen: Bool { false }
-    var contentViewController: BaseSheetViewController { self }
+    var contentViewController: BaseContentViewController { self }
 }

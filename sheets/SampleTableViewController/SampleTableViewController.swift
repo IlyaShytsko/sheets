@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SampleTableViewController: BaseSheetViewController {
+final class SampleTableViewController: BaseContentViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var conteinerView: UIView!
     
@@ -44,5 +44,5 @@ extension SampleTableViewController: UITableViewDataSource, UITableViewDelegate 
 extension SampleTableViewController: SheetContentViewProtocol {
     var contentHeight: Double { 300.0 }
     var allowFullScreen: Bool { true }
-    var contentViewController: BaseSheetViewController { self }
+    var contentViewController: BaseContentViewController { self }
 }

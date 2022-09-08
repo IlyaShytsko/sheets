@@ -1,5 +1,5 @@
 //
-//  BaseSheetViewController.swift
+//  BaseContentViewController.swift
 //  sheets
 //
 //  Created by Ilya Shytsko on 07.09.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseSheetViewController: UIViewController {
+class BaseContentViewController: UIViewController {
     var baseTableView: UITableView? { return nil }
 
     func sizeThatFits(content: UIView) -> Double {
