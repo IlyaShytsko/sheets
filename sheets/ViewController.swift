@@ -8,11 +8,14 @@
 import FloatingPanel
 import UIKit
 
-final class ViewController: UIViewController {
-
+final class ViewController: UIViewController, SampleUIViewDelegate {
     @IBAction func showSheetButton(_ sender: Any) {
-        let vc = SheetViewController.instance(contentView: SampleUIView(), allowFullScreen: false)
+        let vc = SheetViewController.instance(contentView: SampleTableViewController())
         present(vc, animated: true)
+    }
+
+    func printText(text: String) {
+        print(text)
     }
 }
 

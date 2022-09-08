@@ -9,19 +9,16 @@ import FloatingPanel
 import UIKit
 
 final class SheetViewController: FloatingPanelController, FloatingPanelLayout, FloatingPanelBehavior {
-    static func instance(contentView: SampleUIViewDelegate, allowFullScreen: Bool = false) -> SheetViewController {
+    static func instance(contentView: SheetContentViewProtocol) -> SheetViewController {
         let vc = SheetViewController()
-        vc.subView = contentView
-        vc.allowFullScreen = allowFullScreen
+        vc.content = contentView
         return vc
     }
 
     // MARK: - Properties
 
-    private var subView: SampleUIViewDelegate!
-    private var subViewHeight: Double { subView.contentHeight }
-
-    private var allowFullScreen: Bool = false
+    private var content: SheetContentViewProtocol!
+    private var contentView: BaseSheetViewController { content.contentViewController }
 
     let position: FloatingPanelPosition = .bottom
     let initialState: FloatingPanelState = .half
@@ -31,32 +28,23 @@ final class SheetViewController: FloatingPanelController, FloatingPanelLayout, F
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
         layoutView()
         invalidateLayout()
     }
 
-    // MARK: - Initialization
-
-    private func setupView() {
-        let subView = subView.contentView.loadNib()
-        surfaceView.containerView.addSubview(subView)
-        subView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            subView.leadingAnchor.constraint(equalTo: surfaceView.containerView.leadingAnchor),
-            subView.trailingAnchor.constraint(equalTo: surfaceView.containerView.trailingAnchor),
-            subView.topAnchor.constraint(equalTo: surfaceView.containerView.topAnchor),
-            subView.bottomAnchor.constraint(equalTo: surfaceView.containerView.bottomAnchor),
-        ])
-    }
+    // MARK: - Layout
 
     private func layoutView() {
+        set(contentViewController: contentView)
+        if contentView.baseTableView != nil {
+            track(scrollView: contentView.baseTableView!)
+        }
+
         layout = self
-        contentMode = .static
+        contentMode = .fitToBounds
         backdropView.dismissalTapGestureRecognizer.isEnabled = true
         isRemovalInteractionEnabled = true
         panGestureRecognizer.isEnabled = true
-//        track(scrollView: subView.tableView)
 
         let shadow = SurfaceAppearance.Shadow()
         shadow.color = UIColor.black.withAlphaComponent(0.15)
@@ -76,13 +64,9 @@ final class SheetViewController: FloatingPanelController, FloatingPanelLayout, F
         }
     }
 
-
-    
-    // MARK: - Private
-
     private func setAncors() -> [FloatingPanelState: FloatingPanelLayoutAnchoring] {
-        return allowFullScreen ? [.full: FloatingPanelLayoutAnchor(absoluteInset: 0.0, edge: .top, referenceGuide: .superview),
-                                  .half: FloatingPanelLayoutAnchor(absoluteInset: subViewHeight, edge: .bottom, referenceGuide: .safeArea)] :
-            [.half: FloatingPanelLayoutAnchor(absoluteInset: subViewHeight, edge: .bottom, referenceGuide: .safeArea)]
+        return content.allowFullScreen ? [.full: FloatingPanelLayoutAnchor(absoluteInset: 0.0, edge: .top, referenceGuide: .superview),
+                                          .half: FloatingPanelLayoutAnchor(absoluteInset: content.contentHeight, edge: .bottom, referenceGuide: .safeArea)] :
+            [.half: FloatingPanelLayoutAnchor(absoluteInset: content.contentHeight, edge: .bottom, referenceGuide: .safeArea)]
     }
 }
